@@ -6,6 +6,7 @@ class Program
       Console.Title = "Viginere Encryper";
       while(true)
       {
+        try{
           Console.Clear();
           Console.Write("Enter string: ");
           string input = Console.ReadLine().ToLower();
@@ -22,10 +23,14 @@ class Program
               count = 0;
             }
           }
-        Console.Clear();
-        Console.WriteLine($"Encoded String: {encoded}");
-        Console.ReadKey();
-        
+          Console.Clear();
+          Console.WriteLine($"Encoded String: {encoded}");
+          Console.ReadKey();
+        }catch(exception ex){
+          Console.WriteLine("Error :(");
+          Console.WriteLine(ex.Message);
+          Console.ReadKey();
+        }
       }
   }
   static int GetIndex(char character)
